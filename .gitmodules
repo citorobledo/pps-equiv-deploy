@@ -1,7 +1,7 @@
 [submodule "PPS-2023c2-Gurpo2-equiv-front"]
 	path = PPS-2023c2-Gurpo2-equiv-front
 	#url = git@github.com:miguelius/PPS-2023c2-Gurpo2-equiv-front.git
-	url = https://github.com/DesApp-2023c1-Grupo-2/PPS-2023c2-Gurpo2-equiv-front/.git
+	url = https://github.com/DesApp-2023c1-Grupo-2/PPS-2023c2-Gurpo2-equiv-front.git
 	#branch = b7dbd24730c59e2d31b93ced371d43a513f5aa1c
 	branch = Dev
 [submodule "PPS-2023c2-Gurpo2-equiv-back"]
