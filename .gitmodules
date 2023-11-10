@@ -6,5 +6,5 @@
 	branch = Dev
 [submodule "PPS-2023c2-Gurpo2-equiv-back"]
 	path = PPS-2023c2-Gurpo2-equiv-back
-	url = https://github.com/DesApp-2023c1-Grupo-2/PPS-2023c2-Gurpo2-equiv-back/tree/dev
+	url = https://github.com/DesApp-2023c1-Grupo-2/PPS-2023c2-Gurpo2-equiv-back.git
 	branch = dev
