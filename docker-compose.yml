@@ -1,0 +1,59 @@
+version: "3"
+volumes:
+  postgres:
+
+services:
+# funciona
+  db:
+    image: postgres:12.5-alpine
+    restart: always
+    environment:
+      ALLOW_IP_RANGE: 0.0.0.0/0
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: equivalencias
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/postgres/data:/var/lib/postgresql/data
+      - "postgres:/var/lib/postgresql/data"
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  
+  back:
+    
+    build: 
+      context: ./PPS-2023c2-Gurpo2-equiv-back
+      dockerfile: ../docker/back/Dockerfile
+    environment:
+      SQL_USERNAME: postgres
+      SQL_PASSWORD: admin
+      SQL_DATABASE: equivalencias
+    ports:
+      - "3001:3001" 
+    depends_on:
+      db:
+        condition: service_healthy
+    links:
+      - db
+   ##
+   # #environment:
+   # #  
+   # #  POSTGRES_USER: postgres
+   # #  POSTGRES_PASSWORD: admin
+   # #  POSTGRES_DB: equivalencias
+   # #  POSTGRES_HOST: db
+   # #  POSTGRES_PORT: 5432
+   # #  ALLOW_IP_RANGE: 0.0.0.0/0
+    healthcheck:
+      test: ["CMD-SHELL", "wget http://localhost:3001/api/usuarios"]
+      interval: 30s
+      timeout: 5s
+      retries: 10
+  
+

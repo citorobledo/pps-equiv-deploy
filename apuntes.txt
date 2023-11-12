@@ -1,0 +1,6 @@
+para acceder a la unidad c:
+cd /mnt/c
+
+direccion del repo en la machine virtual
+/mnt/c/users/citor/desktop/COSAS\ UNAHUR/pps/pps-equiv-deploy
+

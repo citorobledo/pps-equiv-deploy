@@ -41,3 +41,7 @@ para hacer un commit en el proyecto principal y en los submodulos:
 git commit -am "mensaje"
 git push --recurse-submodules=on-demand
 
+```
+hay que entrar en las carpetas de los submodulos y moverse a las ramas correspondientes
+con git checkout dev por ejemplo.
+```
